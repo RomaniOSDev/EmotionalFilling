@@ -16,6 +16,10 @@
 		74E1E03C2EA22FFC008378E0 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E1E0342EA22FFC008378E0 /* OnboardingView.swift */; };
 		74E1E03D2EA22FFC008378E0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E1E0352EA22FFC008378E0 /* SettingsView.swift */; };
 		74E1E03E2EA22FFC008378E0 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E1E0362EA22FFC008378E0 /* TodayView.swift */; };
+		74E288F32EA61B9B0073EB25 /* LoaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E288F12EA61B9B0073EB25 /* LoaderViewController.swift */; };
+		74E288F42EA61B9B0073EB25 /* CheckLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E288EF2EA61B9B0073EB25 /* CheckLink.swift */; };
+		74E288F52EA61B9B0073EB25 /* InternetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E288F02EA61B9B0073EB25 /* InternetViewController.swift */; };
+		74E288F82EA61BFA0073EB25 /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = 74E288F72EA61BFA0073EB25 /* AppsFlyerLib */; };
 		74F245622E97DE5300E4D713 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74F245592E97DE5300E4D713 /* Assets.xcassets */; };
 		74F245642E97DE5300E4D713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74F2455C2E97DE5300E4D713 /* LaunchScreen.storyboard */; };
 		74F245652E97DE5300E4D713 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74F2455E2E97DE5300E4D713 /* Main.storyboard */; };
@@ -35,6 +39,9 @@
 		74E1E0342EA22FFC008378E0 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		74E1E0352EA22FFC008378E0 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		74E1E0362EA22FFC008378E0 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		74E288EF2EA61B9B0073EB25 /* CheckLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLink.swift; sourceTree = "<group>"; };
+		74E288F02EA61B9B0073EB25 /* InternetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetViewController.swift; sourceTree = "<group>"; };
+		74E288F12EA61B9B0073EB25 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
 		74F245402E97DE2F00E4D713 /* EmotionalFilling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmotionalFilling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F245582E97DE5300E4D713 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74F245592E97DE5300E4D713 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74E288F82EA61BFA0073EB25 /* AppsFlyerLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,8 +92,19 @@
 				74E1E0342EA22FFC008378E0 /* OnboardingView.swift */,
 				74E1E0352EA22FFC008378E0 /* SettingsView.swift */,
 				74E1E0362EA22FFC008378E0 /* TodayView.swift */,
+				74E288F22EA61B9B0073EB25 /* LoadingView */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		74E288F22EA61B9B0073EB25 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				74E288EF2EA61B9B0073EB25 /* CheckLink.swift */,
+				74E288F02EA61B9B0073EB25 /* InternetViewController.swift */,
+				74E288F12EA61B9B0073EB25 /* LoaderViewController.swift */,
+			);
+			path = LoadingView;
 			sourceTree = "<group>";
 		};
 		74F245372E97DE2F00E4D713 = {
@@ -185,6 +204,9 @@
 				Base,
 			);
 			mainGroup = 74F245372E97DE2F00E4D713;
+			packageReferences = (
+				74E288F62EA61BFA0073EB25 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
+			);
 			productRefGroup = 74F245412E97DE2F00E4D713 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -242,6 +264,9 @@
 				74E1E03A2EA22FFC008378E0 /* ContentView.swift in Sources */,
 				74E1E03B2EA22FFC008378E0 /* HistoryView.swift in Sources */,
 				74E1E03C2EA22FFC008378E0 /* OnboardingView.swift in Sources */,
+				74E288F32EA61B9B0073EB25 /* LoaderViewController.swift in Sources */,
+				74E288F42EA61B9B0073EB25 /* CheckLink.swift in Sources */,
+				74E288F52EA61B9B0073EB25 /* InternetViewController.swift in Sources */,
 				74E1E03D2EA22FFC008378E0 /* SettingsView.swift in Sources */,
 				74E1E03E2EA22FFC008378E0 /* TodayView.swift in Sources */,
 				74E1E02F2EA22FFA008378E0 /* MoodViewModel.swift in Sources */,
@@ -281,7 +306,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EmotionalFilling/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -294,7 +319,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tha.m30t10n4lf1l;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -318,7 +343,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EmotionalFilling/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -331,7 +356,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tha.m30t10n4lf1l;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -489,6 +514,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		74E288F62EA61BFA0073EB25 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.17.7;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		74E288F72EA61BFA0073EB25 /* AppsFlyerLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74E288F62EA61BFA0073EB25 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
+			productName = AppsFlyerLib;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 74F245382E97DE2F00E4D713 /* Project object */;
 }
