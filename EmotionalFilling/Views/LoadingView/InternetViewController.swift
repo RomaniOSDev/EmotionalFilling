@@ -5,73 +5,135 @@
 //  Created by Ikzul Stephen on 04.10.2025.
 //
 
+
 import UIKit
 import WebKit
+import PushwooshFramework
+import AppTrackingTransparency
+import UserNotifications
 
-class WebviewVC: UIViewController, WKNavigationDelegate  {
-    
+class WebviewVC: UIViewController, WKNavigationDelegate, PWMessagingDelegate {
 
-    func obtainCookies() {
-        let standartStorage: UserDefaults = UserDefaults.standard
-        let data: Data? = standartStorage.object(forKey: "cvcvcv") as? Data
-        if let cookie = data {
-            let datas: NSArray? = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NSArray.self, from: cookie)
-            if let cookies = datas {
-                for c in cookies {
-                    if let cookieObject = c as? HTTPCookie {
-                        HTTPCookieStorage.shared.setCookie(cookieObject)
-                    }
-                }
-            }
-        }
+    // MARK: - Properties
+    let termsURL: URL
+    private var isPushwooshInitialized = false
+
+    // MARK: - Init
+    init(url: URL) {
+        self.termsURL = url
+        super.init(nibName: nil, bundle: nil)
     }
 
-    lazy var firemanWebviewForTerms: WKWebView = {
-        let privacyConfiguration = WKWebViewConfiguration()
-        privacyConfiguration.defaultWebpagePreferences.allowsContentJavaScript = true
-        privacyConfiguration.allowsPictureInPictureMediaPlayback = true
-        privacyConfiguration.allowsAirPlayForMediaPlayback = true
-        privacyConfiguration.allowsInlineMediaPlayback = true
-        let privacyPreferences = WKWebpagePreferences()
-        privacyPreferences.preferredContentMode = .mobile
-        privacyConfiguration.defaultWebpagePreferences = privacyPreferences
-        let webView = WKWebView(frame: .zero, configuration: privacyConfiguration)
-        webView.translatesAutoresizingMaskIntoConstraints = false
-        return webView
-    }()
-    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     // MARK: - Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        addUI()
+        setupWebView()
         obtainCookies()
         firemanWebviewForTerms.navigationDelegate = self
     }
 
-    init(url: URL) {
-        self.termsURL = url
-        print("termsURL: \(termsURL)")
-        super.init(nibName: nil, bundle: nil)
-    }
-    let termsURL: URL
-    
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-            super.viewWillDisappear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        // ⚙️ Инициализация Pushwoosh только при первом появлении
+        if !isPushwooshInitialized {
+            isPushwooshInitialized = true
+            requestPushNotificationPermission()
         }
-    
-    
-    private func addUI() {
+    }
+
+    // MARK: - Pushwoosh Logic
+    private func requestPushNotificationPermission() {
+        if #available(iOS 14, *) {
+            // ATT — для прозрачности, не обязательно, но безопасно
+            ATTrackingManager.requestTrackingAuthorization { _ in
+                self.initializePushwoosh()
+            }
+        } else {
+            initializePushwoosh()
+        }
+    }
+
+    private func initializePushwoosh() {
+        print("🔹 Initializing Pushwoosh SDK")
+        
+        // ✅ ПРИНТ КЛЮЧА ДЛЯ ПРОВЕРКИ
+        print("🔑 Pushwoosh App ID: \(Config.pushwooshAppId)")
+        
+        Pushwoosh.initialize(withAppCode: Config.pushwooshAppId)
+        Pushwoosh.sharedInstance().delegate = self
+
+        // 🔸 Запрашиваем разрешение и отслеживаем результат
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            if let error = error {
+                print("❌ Error requesting push permission: \(error.localizedDescription)")
+                return
+            }
+            
+            if granted {
+                print("✅ USER GRANTED PUSH PERMISSION!")
+                // 👉 Здесь пользователь дал разрешение!
+                self.onPushPermissionGranted()
+                
+                DispatchQueue.main.async {
+                    Pushwoosh.sharedInstance().registerForPushNotifications()
+                }
+            } else {
+                print("🚫 USER DENIED PUSH PERMISSION")
+                // 👉 Здесь пользователь отказал
+                self.onPushPermissionDenied()
+            }
+        }
+    }
+
+    private func onPushPermissionGranted() {
+        print("🎉 Пользователь разрешил уведомления!")
+        
+        // Сохраняем в UserDefaults
+        UserDefaults.standard.set(true, forKey: "pushPermissionGranted")
+        UserDefaults.standard.set(Date(), forKey: "pushPermissionGrantedDate")
+        
+        // Отправляем аналитику или выполняем другие действия
+        self.sendAnalyticsEvent("push_permission_granted")
+    }
+
+    private func onPushPermissionDenied() {
+        print("😞 Пользователь запретил уведомления")
+        UserDefaults.standard.set(false, forKey: "pushPermissionGranted")
+        
+        self.sendAnalyticsEvent("push_permission_denied")
+    }
+
+    private func sendAnalyticsEvent(_ event: String) {
+        // Отправка в вашу аналитику (AppsFlyer, Firebase и т.д.)
+        print("📊 Analytics: \(event)")
+    }
+
+    // MARK: - PWMessagingDelegate
+    func pushwoosh(_ pushwoosh: Pushwoosh, onMessageReceived message: PWMessage) {
+        print("📬 Push received: \(message.payload?.description ?? "")")
+    }
+
+    func pushwoosh(_ pushwoosh: Pushwoosh, onMessageOpened message: PWMessage) {
+        print("📨 Push opened: \(message.payload?.description ?? "")")
+    }
+
+    // MARK: - WebView setup
+    lazy var firemanWebviewForTerms: WKWebView = {
+        let config = WKWebViewConfiguration()
+        config.defaultWebpagePreferences.allowsContentJavaScript = true
+        config.allowsInlineMediaPlayback = true
+        let webView = WKWebView(frame: .zero, configuration: config)
+        webView.translatesAutoresizingMaskIntoConstraints = false
+        return webView
+    }()
+
+    private func setupWebView() {
         view.addSubview(firemanWebviewForTerms)
         firemanWebviewForTerms.load(URLRequest(url: termsURL))
-        firemanWebviewForTerms.allowsBackForwardNavigationGestures = true
-        
-        firemanWebviewForTerms.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             firemanWebviewForTerms.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             firemanWebviewForTerms.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -79,40 +141,39 @@ class WebviewVC: UIViewController, WKNavigationDelegate  {
             firemanWebviewForTerms.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
     }
-    private func saveCookies() {
-        let cookieJar: HTTPCookieStorage = HTTPCookieStorage.shared
-        if let cookies = cookieJar.cookies {
-            let data: Data? = try? NSKeyedArchiver.archivedData(withRootObject: cookies, requiringSecureCoding: false)
-            if let data = data {
-                let userDefaults = UserDefaults.standard
-                userDefaults.set(data, forKey: "cvcvcv")
-            }
+
+    // MARK: - Cookies
+    private func obtainCookies() {
+        if let data = UserDefaults.standard.data(forKey: "cvcvcv"),
+           let cookies = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NSArray.self, from: data) as? [HTTPCookie] {
+            cookies.forEach { HTTPCookieStorage.shared.setCookie($0) }
         }
     }
-  
+
+    private func saveCookies() {
+        if let cookies = HTTPCookieStorage.shared.cookies {
+            let data = try? NSKeyedArchiver.archivedData(withRootObject: cookies, requiringSecureCoding: false)
+            UserDefaults.standard.set(data, forKey: "cvcvcv")
+        }
+    }
+
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         saveCookies()
         decisionHandler(.allow)
     }
-    
+
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print("Checking web view url")
-        if let url = webView.url {
-            print("URL for webview: \(url)")
-            print("lol kek")
-            if SaveService.lastUrl == nil {
-                SaveService.lastUrl = url
-                print("Last url: \(String(describing: SaveService.lastUrl))")
-            }
+        print("✅ WebView loaded: \(webView.url?.absoluteString ?? "")")
+        if SaveService.lastUrl == nil {
+            SaveService.lastUrl = webView.url
         }
     }
 }
 
+// MARK: - SaveService
 struct SaveService {
-    
     static var lastUrl: URL? {
         get { UserDefaults.standard.url(forKey: "LastUrl") }
         set { UserDefaults.standard.set(newValue, forKey: "LastUrl") }
     }
 }
-

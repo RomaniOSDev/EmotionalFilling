@@ -20,6 +20,15 @@
 		74E288F42EA61B9B0073EB25 /* CheckLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E288EF2EA61B9B0073EB25 /* CheckLink.swift */; };
 		74E288F52EA61B9B0073EB25 /* InternetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E288F02EA61B9B0073EB25 /* InternetViewController.swift */; };
 		74E288F82EA61BFA0073EB25 /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = 74E288F72EA61BFA0073EB25 /* AppsFlyerLib */; };
+		74E289E42EA666030073EB25 /* PushwooshBridge in Frameworks */ = {isa = PBXBuildFile; productRef = 74E289E32EA666030073EB25 /* PushwooshBridge */; };
+		74E289E62EA666030073EB25 /* PushwooshCore in Frameworks */ = {isa = PBXBuildFile; productRef = 74E289E52EA666030073EB25 /* PushwooshCore */; };
+		74E289E82EA666030073EB25 /* PushwooshForegroundPush in Frameworks */ = {isa = PBXBuildFile; productRef = 74E289E72EA666030073EB25 /* PushwooshForegroundPush */; };
+		74E289EA2EA666030073EB25 /* PushwooshFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 74E289E92EA666030073EB25 /* PushwooshFramework */; };
+		74E289EC2EA666030073EB25 /* PushwooshLiveActivities in Frameworks */ = {isa = PBXBuildFile; productRef = 74E289EB2EA666030073EB25 /* PushwooshLiveActivities */; };
+		74E289F92EA66D620073EB25 /* EmotionalNotificationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 74E289F22EA66D610073EB25 /* EmotionalNotificationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		74E28A002EA6735B0073EB25 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E289FF2EA673580073EB25 /* Config.swift */; };
+		74E28A022EA673E80073EB25 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 74E28A012EA673E50073EB25 /* PrivacyInfo.xcprivacy */; };
+		74E28A062EA6B0EB0073EB25 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E28A042EA6B0EB0073EB25 /* NotificationService.swift */; };
 		74F245622E97DE5300E4D713 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74F245592E97DE5300E4D713 /* Assets.xcassets */; };
 		74F245642E97DE5300E4D713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74F2455C2E97DE5300E4D713 /* LaunchScreen.storyboard */; };
 		74F245652E97DE5300E4D713 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74F2455E2E97DE5300E4D713 /* Main.storyboard */; };
@@ -27,6 +36,30 @@
 		74F245672E97DE5300E4D713 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2455F2E97DE5300E4D713 /* SceneDelegate.swift */; };
 		74F245682E97DE5300E4D713 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F245602E97DE5300E4D713 /* ViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		74E289F72EA66D620073EB25 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74F245382E97DE2F00E4D713 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 74E289F12EA66D610073EB25;
+			remoteInfo = EmotionalNotificationExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		74E289FE2EA66D620073EB25 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				74E289F92EA66D620073EB25 /* EmotionalNotificationExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		01C08423000A890D6066B470 /* Pods-EmotionalFilling.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EmotionalFilling.debug.xcconfig"; path = "Target Support Files/Pods-EmotionalFilling/Pods-EmotionalFilling.debug.xcconfig"; sourceTree = "<group>"; };
@@ -42,6 +75,12 @@
 		74E288EF2EA61B9B0073EB25 /* CheckLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLink.swift; sourceTree = "<group>"; };
 		74E288F02EA61B9B0073EB25 /* InternetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetViewController.swift; sourceTree = "<group>"; };
 		74E288F12EA61B9B0073EB25 /* LoaderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderViewController.swift; sourceTree = "<group>"; };
+		74E289ED2EA6661D0073EB25 /* EmotionalFilling.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EmotionalFilling.entitlements; sourceTree = "<group>"; };
+		74E289F22EA66D610073EB25 /* EmotionalNotificationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EmotionalNotificationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		74E289FF2EA673580073EB25 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		74E28A012EA673E50073EB25 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		74E28A032EA6B0EB0073EB25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74E28A042EA6B0EB0073EB25 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		74F245402E97DE2F00E4D713 /* EmotionalFilling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmotionalFilling.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74F245582E97DE5300E4D713 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74F245592E97DE5300E4D713 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,10 +94,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		74E289EF2EA66D610073EB25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		74F2453D2E97DE2F00E4D713 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74E289E62EA666030073EB25 /* PushwooshCore in Frameworks */,
+				74E289EA2EA666030073EB25 /* PushwooshFramework in Frameworks */,
+				74E289EC2EA666030073EB25 /* PushwooshLiveActivities in Frameworks */,
+				74E289E42EA666030073EB25 /* PushwooshBridge in Frameworks */,
+				74E289E82EA666030073EB25 /* PushwooshForegroundPush in Frameworks */,
 				74E288F82EA61BFA0073EB25 /* AppsFlyerLib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -100,6 +151,8 @@
 		74E288F22EA61B9B0073EB25 /* LoadingView */ = {
 			isa = PBXGroup;
 			children = (
+				74E28A012EA673E50073EB25 /* PrivacyInfo.xcprivacy */,
+				74E289FF2EA673580073EB25 /* Config.swift */,
 				74E288EF2EA61B9B0073EB25 /* CheckLink.swift */,
 				74E288F02EA61B9B0073EB25 /* InternetViewController.swift */,
 				74E288F12EA61B9B0073EB25 /* LoaderViewController.swift */,
@@ -107,10 +160,20 @@
 			path = LoadingView;
 			sourceTree = "<group>";
 		};
+		74E28A052EA6B0EB0073EB25 /* EmotionalNotificationExtension */ = {
+			isa = PBXGroup;
+			children = (
+				74E28A032EA6B0EB0073EB25 /* Info.plist */,
+				74E28A042EA6B0EB0073EB25 /* NotificationService.swift */,
+			);
+			path = EmotionalNotificationExtension;
+			sourceTree = "<group>";
+		};
 		74F245372E97DE2F00E4D713 = {
 			isa = PBXGroup;
 			children = (
 				74F245612E97DE5300E4D713 /* EmotionalFilling */,
+				74E28A052EA6B0EB0073EB25 /* EmotionalNotificationExtension */,
 				74F245412E97DE2F00E4D713 /* Products */,
 				8DFD98FB8420DD6250A458B8 /* Pods */,
 				F0944F23E6E65F4363D6EAF0 /* Frameworks */,
@@ -121,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				74F245402E97DE2F00E4D713 /* EmotionalFilling.app */,
+				74E289F22EA66D610073EB25 /* EmotionalNotificationExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -128,6 +192,7 @@
 		74F245612E97DE5300E4D713 /* EmotionalFilling */ = {
 			isa = PBXGroup;
 			children = (
+				74E289ED2EA6661D0073EB25 /* EmotionalFilling.entitlements */,
 				74F245582E97DE5300E4D713 /* AppDelegate.swift */,
 				74F245592E97DE5300E4D713 /* Assets.xcassets */,
 				74F2455A2E97DE5300E4D713 /* Info.plist */,
@@ -162,6 +227,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		74E289F12EA66D610073EB25 /* EmotionalNotificationExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 74E289FB2EA66D620073EB25 /* Build configuration list for PBXNativeTarget "EmotionalNotificationExtension" */;
+			buildPhases = (
+				74E289EE2EA66D610073EB25 /* Sources */,
+				74E289EF2EA66D610073EB25 /* Frameworks */,
+				74E289F02EA66D610073EB25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EmotionalNotificationExtension;
+			packageProductDependencies = (
+			);
+			productName = EmotionalNotificationExtension;
+			productReference = 74E289F22EA66D610073EB25 /* EmotionalNotificationExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		74F2453F2E97DE2F00E4D713 /* EmotionalFilling */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74F245532E97DE3000E4D713 /* Build configuration list for PBXNativeTarget "EmotionalFilling" */;
@@ -170,10 +254,12 @@
 				74F2453C2E97DE2F00E4D713 /* Sources */,
 				74F2453D2E97DE2F00E4D713 /* Frameworks */,
 				74F2453E2E97DE2F00E4D713 /* Resources */,
+				74E289FE2EA66D620073EB25 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				74E289F82EA66D620073EB25 /* PBXTargetDependency */,
 			);
 			name = EmotionalFilling;
 			productName = EmotionalFilling;
@@ -190,6 +276,9 @@
 				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
+					74E289F12EA66D610073EB25 = {
+						CreatedOnToolsVersion = 26.0;
+					};
 					74F2453F2E97DE2F00E4D713 = {
 						CreatedOnToolsVersion = 26.0;
 					};
@@ -206,23 +295,33 @@
 			mainGroup = 74F245372E97DE2F00E4D713;
 			packageReferences = (
 				74E288F62EA61BFA0073EB25 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
+				74E289E22EA666030073EB25 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */,
 			);
 			productRefGroup = 74F245412E97DE2F00E4D713 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				74F2453F2E97DE2F00E4D713 /* EmotionalFilling */,
+				74E289F12EA66D610073EB25 /* EmotionalNotificationExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		74E289F02EA66D610073EB25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		74F2453E2E97DE2F00E4D713 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				74F245622E97DE5300E4D713 /* Assets.xcassets in Resources */,
 				74F245642E97DE5300E4D713 /* LaunchScreen.storyboard in Resources */,
+				74E28A022EA673E80073EB25 /* PrivacyInfo.xcprivacy in Resources */,
 				74F245652E97DE5300E4D713 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,12 +354,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		74E289EE2EA66D610073EB25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				74E28A062EA6B0EB0073EB25 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		74F2453C2E97DE2F00E4D713 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				74E1E0382EA22FFC008378E0 /* AchievementsView.swift in Sources */,
 				74E1E0392EA22FFC008378E0 /* AnalyticsView.swift in Sources */,
+				74E28A002EA6735B0073EB25 /* Config.swift in Sources */,
 				74E1E03A2EA22FFC008378E0 /* ContentView.swift in Sources */,
 				74E1E03B2EA22FFC008378E0 /* HistoryView.swift in Sources */,
 				74E1E03C2EA22FFC008378E0 /* OnboardingView.swift in Sources */,
@@ -278,6 +386,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		74E289F82EA66D620073EB25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 74E289F12EA66D610073EB25 /* EmotionalNotificationExtension */;
+			targetProxy = 74E289F72EA66D620073EB25 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		74F2455C2E97DE5300E4D713 /* LaunchScreen.storyboard */ = {
@@ -299,14 +415,73 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		74E289FC2EA66D620073EB25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AR6AN34RS9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EmotionalNotificationExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EmotionalNotificationExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tha.m30t10n4lf1l.EmotionalNotificationExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		74E289FD2EA66D620073EB25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AR6AN34RS9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EmotionalNotificationExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = EmotionalNotificationExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.tha.m30t10n4lf1l.EmotionalNotificationExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		74F245542E97DE3000E4D713 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 01C08423000A890D6066B470 /* Pods-EmotionalFilling.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EmotionalFilling/EmotionalFilling.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EmotionalFilling/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -319,9 +494,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tha.m30t10n4lf1l;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -342,8 +518,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EmotionalFilling/EmotionalFilling.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EmotionalFilling/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -356,9 +535,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.tha.m30t10n4lf1l;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -495,6 +675,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		74E289FB2EA66D620073EB25 /* Build configuration list for PBXNativeTarget "EmotionalNotificationExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				74E289FC2EA66D620073EB25 /* Debug */,
+				74E289FD2EA66D620073EB25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		74F2453B2E97DE2F00E4D713 /* Build configuration list for PBXProject "EmotionalFilling" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -524,6 +713,14 @@
 				minimumVersion = 6.17.7;
 			};
 		};
+		74E289E22EA666030073EB25 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Pushwoosh/Pushwoosh-XCFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.11.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -531,6 +728,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 74E288F62EA61BFA0073EB25 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
 			productName = AppsFlyerLib;
+		};
+		74E289E32EA666030073EB25 /* PushwooshBridge */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74E289E22EA666030073EB25 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */;
+			productName = PushwooshBridge;
+		};
+		74E289E52EA666030073EB25 /* PushwooshCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74E289E22EA666030073EB25 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */;
+			productName = PushwooshCore;
+		};
+		74E289E72EA666030073EB25 /* PushwooshForegroundPush */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74E289E22EA666030073EB25 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */;
+			productName = PushwooshForegroundPush;
+		};
+		74E289E92EA666030073EB25 /* PushwooshFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74E289E22EA666030073EB25 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */;
+			productName = PushwooshFramework;
+		};
+		74E289EB2EA666030073EB25 /* PushwooshLiveActivities */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 74E289E22EA666030073EB25 /* XCRemoteSwiftPackageReference "Pushwoosh-XCFramework" */;
+			productName = PushwooshLiveActivities;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

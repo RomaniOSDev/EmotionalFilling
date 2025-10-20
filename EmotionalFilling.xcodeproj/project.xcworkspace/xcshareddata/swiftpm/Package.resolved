@@ -1,5 +1,5 @@
 {
-  "originHash" : "a57860cdd384a1ee7db2518e79b330883eeb5cb3471ec10431cea3eb66b63eb6",
+  "originHash" : "3cab9ce3aaecd0aa33d8f43d1a0c1ae34eb49812293e20c7ce3c2b0394fcf23f",
   "pins" : [
     {
       "identity" : "appsflyerframework",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "43147aff398c1d9973f2f5dbe1193ad5d2e82d74",
         "version" : "6.17.7"
+      }
+    },
+    {
+      "identity" : "pushwoosh-xcframework",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Pushwoosh/Pushwoosh-XCFramework",
+      "state" : {
+        "revision" : "9cc40d208ea20cc8041a248cd5e9d8e4e30419a2",
+        "version" : "6.11.3"
       }
     }
   ],

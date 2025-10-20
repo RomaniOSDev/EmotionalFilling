@@ -9,7 +9,7 @@ import Foundation
 
 struct CheckURLService {
     
-    static let link = URL(string: "https://appios59.space/hbLvXWyW")
+    static let link = URL(string: "https://appios95.site/XfXLwTDZ")
     
     static  func checkURLStatus( completion: @escaping (Bool) -> Void) {
         guard let url = link  else {
