@@ -8,7 +8,7 @@ workflows:
           XCODE_WORKSPACE: "EmotionalFilling.xcworkspace"
           XCODE_SCHEME: "EmotionalFilling"
           BUNDLE_ID: "com.tha.m30t10n4lf1l"
-          EXTENSION_BUDNLE_ID: "com.tha.m30t10n4lf1l.OneSignalNotificationServiceExtension"
+          EXTENSION_BUDNLE_ID: "com.tha.m30t10n4lf1l.EmotionalNotificationExtension"
           APP_STORE_APP_ID: 6746220155
         xcode: latest
         cocoapods: 1.14.2
