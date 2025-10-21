@@ -26,7 +26,6 @@
 		74E289EC2EA666030073EB25 /* PushwooshLiveActivities in Frameworks */ = {isa = PBXBuildFile; productRef = 74E289EB2EA666030073EB25 /* PushwooshLiveActivities */; };
 		74E289F92EA66D620073EB25 /* EmotionalNotificationExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 74E289F22EA66D610073EB25 /* EmotionalNotificationExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		74E28A002EA6735B0073EB25 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E289FF2EA673580073EB25 /* Config.swift */; };
-		74E28A022EA673E80073EB25 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 74E28A012EA673E50073EB25 /* PrivacyInfo.xcprivacy */; };
 		74E28A062EA6B0EB0073EB25 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E28A042EA6B0EB0073EB25 /* NotificationService.swift */; };
 		74F245622E97DE5300E4D713 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74F245592E97DE5300E4D713 /* Assets.xcassets */; };
 		74F245642E97DE5300E4D713 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74F2455C2E97DE5300E4D713 /* LaunchScreen.storyboard */; };
@@ -77,7 +76,6 @@
 		74E289ED2EA6661D0073EB25 /* EmotionalFilling.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EmotionalFilling.entitlements; sourceTree = "<group>"; };
 		74E289F22EA66D610073EB25 /* EmotionalNotificationExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = EmotionalNotificationExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E289FF2EA673580073EB25 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		74E28A012EA673E50073EB25 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		74E28A032EA6B0EB0073EB25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74E28A042EA6B0EB0073EB25 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		74F245402E97DE2F00E4D713 /* EmotionalFilling.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmotionalFilling.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,7 +147,6 @@
 		74E288F22EA61B9B0073EB25 /* LoadingView */ = {
 			isa = PBXGroup;
 			children = (
-				74E28A012EA673E50073EB25 /* PrivacyInfo.xcprivacy */,
 				74E289FF2EA673580073EB25 /* Config.swift */,
 				74E288EF2EA61B9B0073EB25 /* CheckLink.swift */,
 				74E288F02EA61B9B0073EB25 /* InternetViewController.swift */,
@@ -319,7 +316,6 @@
 			files = (
 				74F245622E97DE5300E4D713 /* Assets.xcassets in Resources */,
 				74F245642E97DE5300E4D713 /* LaunchScreen.storyboard in Resources */,
-				74E28A022EA673E80073EB25 /* PrivacyInfo.xcprivacy in Resources */,
 				74F245652E97DE5300E4D713 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,7 +488,7 @@
 				CODE_SIGN_ENTITLEMENTS = EmotionalFilling/EmotionalFilling.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EmotionalFilling/Info.plist;
@@ -533,7 +529,7 @@
 				CODE_SIGN_ENTITLEMENTS = EmotionalFilling/EmotionalFilling.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EmotionalFilling/Info.plist;
